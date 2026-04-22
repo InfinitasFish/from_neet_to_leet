@@ -18,4 +18,5 @@ class Solution:
 
         return idx
 
+
 print(Solution().search([-1,0,2,4,6,8], 4))
