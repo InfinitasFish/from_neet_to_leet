@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+
 class SolutionSlow:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         # target O(log(m+n))
@@ -53,6 +54,8 @@ class Solution:
             l = 0
             r = len(short_nums) - 1
 
+            # search target is basically correct slice of shorter array that corresponds to left partition
+            # of joined array
             ALeft, BLeft, ARight, BRight = 0, 0, 0, 0
             while True:
                 AMid = l + (r - l) // 2
