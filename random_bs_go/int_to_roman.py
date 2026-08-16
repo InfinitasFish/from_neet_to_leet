@@ -47,7 +47,6 @@ class SolutionSlow:
             num //= 10
             pow_i *= 10
 
-
         result.reverse()
         return "".join(result)
 
@@ -58,6 +57,10 @@ class Solution:
         # covers all possible combinations for num <= 3999
         # for bigger numbers we would have to add new symbols,
         # like 4000, 5000, 9000, 10000 etc.
+
+        # the idea is to imagine that our int is formed not from powers of ten,
+        # but powers of 1000, 900, 500, 400, etc.
+        # so we just iterate through these powers and calculate multiplier
         symbols_map = {1000: 'M', 900: "CM", 500: 'D', 400: "CD",
                        100: 'C', 90: "XC", 50: 'L', 40: "XL", 10: 'X',
                        9: "IX", 5: "V", 4: "IV", 1: 'I'
@@ -72,7 +75,6 @@ class Solution:
             num -= val * count
 
         return ''.join(result)
-
 
 
 if __name__ == "__main__":
