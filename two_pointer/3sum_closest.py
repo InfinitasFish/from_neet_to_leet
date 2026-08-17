@@ -56,8 +56,7 @@ class SolutionSlow:
 class Solution:
     def threeSumClosest(self, nums: List[int], target: int) -> int:
         # faster version just utilizes sort and applies two pointers
-        # basically we will have the same O(n*log(n) + n^2) = O(n^2)
-        # time as my first solution, but it's faster in practice
+        # basically we will have O(n*log(n) + n^2) = O(n^2) time complexity instead of O(n^3)
         nums = sorted(nums)
         result = nums[0] + nums[1] + nums[2]
         n = len(nums)
