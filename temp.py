@@ -24,3 +24,10 @@ tuple_set.add((1, 1, 2))
 tuple_set.add((2, 1, 1))
 print(tuple_set)
 
+# edge range
+for i in range(1, 1):
+    print(i)  # doesn't print
+
+# edge indexing
+list = [1,2,3,4,5]
+print(list[1:1])  # empty list
