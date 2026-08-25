@@ -28,23 +28,36 @@ class Solution:
             else:
                 right_sum += int(num[i])
 
+        # no question marks => compare sums
         if right_qm + left_qm == 0:
             return not right_sum == left_sum
 
-        diff_qm = abs(left_qm - right_qm)
-        diff_sum = abs(right_sum)
-        # each pair can subtract 9 from difference
-        pairs = diff_qm // 2
+        # odd number of question marks => alice always wins by tipping on last step
+        if (right_qm + left_qm) % 2 == 1:
+            return True
 
+        # winner will depend only on unpaired question marks and sums difference,
+        # other question marks will cancel out
 
+        # also for Bob to have a chance, the side that's ahead in sum must be the side with fewer ? marks
+        diff_qm = right_qm - left_qm
+        diff_sum = left_sum - right_sum
 
-
-
+        # even number of question marks => bob only wins when the difference is divisible
+        # by 9 and there's enough marks to close difference out (+9 for each pair)
+        # so bob wins when diff_qm // 2 * 9 == diff_sum
+        # if diff_sum is smaller, alice will 'overflow' it, if bigger, alice will place zeros
+        # and bob won't have enough nines to fill difference
+        if diff_qm // 2 * 9 == diff_sum:
+            return False
+        else:
+            return True
 
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.sumGame("5023"))  # False
-    print(s.sumGame("25??"))  # True
-    print(s.sumGame("?3295???"))  # False
-    print(s.sumGame("9?"))  # True
+    # print(s.sumGame("5023"))  # False
+    # print(s.sumGame("25??"))  # True
+    # print(s.sumGame("?3295???"))  # False
+    # print(s.sumGame("9?"))  # True
+    print(s.sumGame("?6?6?000?3"))  # True
