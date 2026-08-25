@@ -10,7 +10,6 @@ list = [1, 2, 3, 4]
 for a, b in zip(list, list[1:]):
     print(f"{a} {b}")
 
-
 # unpacking
 list = [1, 2, 3, 4]
 num0, *num12 = list
@@ -31,3 +30,20 @@ for i in range(1, 1):
 # edge indexing
 list = [1,2,3,4,5]
 print(list[1:1])  # empty list
+
+# prefix & suffix
+list = [1,2,3,4,5]
+pref = [*list]
+suf = [*list]
+for i in range(1, len(list)):
+    pref[i] += pref[i - 1]
+for i in range(len(list)-2, -1, -1):
+    suf[i] += suf[i+1]
+print(f"list: {list}, pref: {pref}, suf: {suf}")
+
+# char ord to detect ints
+str = "-109az"
+print([ord(c) for c in str])
+
+# module
+print(18 % 9)
