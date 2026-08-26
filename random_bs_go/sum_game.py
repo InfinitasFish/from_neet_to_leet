@@ -40,6 +40,7 @@ class Solution:
         # other question marks will cancel out
 
         # also for Bob to have a chance, the side that's ahead in sum must be the side with fewer ? marks
+        # if sign of these is different, it means  
         diff_qm = right_qm - left_qm
         diff_sum = left_sum - right_sum
 
