@@ -47,3 +47,19 @@ print([ord(c) for c in str])
 
 # module
 print(18 % 9)
+
+# string skip indexing
+str = "abcd"
+for i in range(len(str)):
+    print(str[:i] + str[i + 1:])
+
+# lexicographical comparison
+print("c" > "bbbbbbbbbbb")  # True
+print("bbbbbb" > "b")  # True
+print("bba" > "bab")  # True
+print("aaaaz" > "bbbbb")  # False
+print("ba" > "ab")
+
+# negative indexing
+list = [1,2,3,4,5]
+print(list[:-1])  # [1,2,3,4]
