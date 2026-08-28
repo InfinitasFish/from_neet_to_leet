@@ -19,13 +19,8 @@ class SolutionMem:
         return min(candidates) if candidates else ''
 
 
-class Solution:
+class SolutionCopied:
     def lexGreaterPermutation(self, s: str, target: str) -> str:
-        assert len(s) == len(target)
-
-        # todo: don't write an 'explanation' before solving the problem next time....
-        # for smallest perm difference should be as far right as possible
-        # after placing difference at [i], we put remaining characters in ascending order
 
         count = [0] * 26
         for ch in s:
@@ -61,6 +56,15 @@ class Solution:
                 return answer
 
         return ""
+
+
+class Solution:
+    def lexGreaterPermutation(self, s: str, target: str) -> str:
+
+        # far_drawer: don't write an 'explanation' before solving the problem next time....
+        # for smallest perm difference should be as far right as possible
+        # after placing difference at [i], we put remaining characters in ascending order
+        pass
 
 
 s = Solution()

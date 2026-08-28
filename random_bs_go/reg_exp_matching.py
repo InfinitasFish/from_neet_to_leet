@@ -4,7 +4,7 @@ from __future__ import annotations
 
 # true solution utilises 2d dynamic programming
 # I can't grasp it for now, so ill return after solving some easier DP problems:
-# todo: do dp
+# far_drawer: do dp
 
 
 # of course pure logic doesn't work here, wasting my time

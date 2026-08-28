@@ -1,14 +1,13 @@
 from __future__ import annotations
-
-import time
 from math import floor, ceil
+
 
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         # problem assumes that there are only valid expressions
         stack_ints = []
         for i, token in enumerate(tokens):
-            # check whether int of op
+            # check whether int or operation
             try:
                 it = int(token)
                 stack_ints.append(it)
