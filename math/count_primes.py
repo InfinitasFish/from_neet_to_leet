@@ -44,7 +44,7 @@ class Solution:
             if primes[i]:
                 # any smaller multiple of i would have already been marked by smaller prime
                 j = i * i
-                # a bit faster-than-loop assign
+                # a bit-faster-than-loop assign
                 upd_len = len(primes[j :n :2 * i])
                 primes[j :n :2 * i] = [False] * upd_len
             else:
