@@ -9,7 +9,7 @@ class Solution:
         # nums2[i] = nums1[i]
         # nums2[i] = nums1[i] - nums1[j], j != i
         for i in range(len(nums1)):
-            if not all_even and not all_odd:
+            if not all_even:
                 break
 
             if nums1[i] % 2 == 0 and all_even:
@@ -17,18 +17,18 @@ class Solution:
                 for j in range(len(nums1)):
                     if i == j:
                         continue
-                    if nums1[i] - nums1[j] % 2 == 1:
+                    if (nums1[i] - nums1[j]) % 2 == 1:
                         found_odd = True
                         break
                 if not found_odd:
                     all_odd = False
 
-            elif all_odd:
+            else:
                 found_even = False
                 for j in range(len(nums1)):
                     if i == j:
                         continue
-                    if nums1[i] - nums1[j] % 2 == 0:
+                    if (nums1[i] - nums1[j]) % 2 == 0:
                         found_even = True
                         break
                 if not found_even:
@@ -36,6 +36,14 @@ class Solution:
 
         return all_even or all_odd
 
+
+class SolutionO1:
+    def uniformArray(self, nums1: list[int]) -> bool:
+        # the idea is that we always can construct odd array if at least one odd number is present
+        # because (even - odd) and (odd - even) == odd
+        # e.g. [1,6,8,2,1] , keep 1 and subtract from all even -> [1,5,7,1,1]
+        # if we don't have odd numbers, we still return true because all numbers are even
+        return True
 
 
 s = Solution()
