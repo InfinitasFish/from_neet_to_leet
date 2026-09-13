@@ -58,8 +58,14 @@ print("c" > "bbbbbbbbbbb")  # True
 print("bbbbbb" > "b")  # True
 print("bba" > "bab")  # True
 print("aaaaz" > "bbbbb")  # False
-print("ba" > "ab")
+print("ba" > "ab")  # True
+print("1234" > "234")  # False
+print("1234" > "2")  # False
 
 # negative indexing
 list = [1,2,3,4,5]
 print(list[:-1])  # [1,2,3,4]
+
+l = [1,2,3]
+l0 = [2,1,3]
+print(l.__str__() > l0.__str__())  # False
