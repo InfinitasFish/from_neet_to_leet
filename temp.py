@@ -69,3 +69,8 @@ print(list[:-1])  # [1,2,3,4]
 l = [1,2,3]
 l0 = [2,1,3]
 print(l.__str__() > l0.__str__())  # False
+
+# 2d matrix
+m = [[0] * 5] * 5 # btw not correct because each inner list will be pointed at the same memory
+m = [[0] * 5 for _ in range(5)]
+print(m)

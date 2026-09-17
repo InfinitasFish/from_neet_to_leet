@@ -66,3 +66,4 @@ s = Solution()
 print(s.maxPalindromes("abaccdbbd", 3))  # 2
 print(s.maxPalindromes("adbcda", 2))  # 0
 print(s.maxPalindromes("ababa", 3))  # 1
+print(s.maxPalindromes("abbbbbbbbacaba", 3))  # 3
