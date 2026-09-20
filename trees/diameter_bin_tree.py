@@ -55,10 +55,29 @@ class SolutionSlow:
         return diameter
 
 
-s = SolutionSlow()
+class Solution:
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+
+        res = 0
+        def dfs(leaf):
+            if leaf is None:
+                return 0
+
+            l = dfs(leaf.left)
+            r = dfs(leaf.right)
+
+            nonlocal res
+            res = max(res, l + r)
+
+            return 1 + max(l, r)
+
+        dfs(root)
+        return res
+
+
+s = Solution()
 t = TreeNode(1, None, TreeNode(2, TreeNode(3, TreeNode(5)), TreeNode(4)))
 print(s.diameterOfBinaryTree(t))  # 3
 t = TreeNode(1, None, TreeNode(3, TreeNode(4, None, TreeNode(6)), TreeNode(5, None, TreeNode(7))))
 print(s.diameterOfBinaryTree(t))  # 4
-
 

@@ -74,3 +74,8 @@ print(l.__str__() > l0.__str__())  # False
 m = [[0] * 5] * 5 # btw not correct because each inner list will be pointed at the same memory
 m = [[0] * 5 for _ in range(5)]
 print(m)
+
+# reverse degree of char
+print(ord('a') - 71 - 2 * (ord('a') - 97))
+print(ord('b') - 71 - 2 * (ord('b') - 97))
+print(ord('c') - 71 - 2 * (ord('c') - 97))
