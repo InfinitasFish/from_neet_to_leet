@@ -79,3 +79,6 @@ print(m)
 print(ord('a') - 71 - 2 * (ord('a') - 97))
 print(ord('b') - 71 - 2 * (ord('b') - 97))
 print(ord('c') - 71 - 2 * (ord('c') - 97))
+
+# ord of capital
+print([ord(c) for c in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"])
