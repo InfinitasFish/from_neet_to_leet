@@ -82,3 +82,6 @@ print(ord('c') - 71 - 2 * (ord('c') - 97))
 
 # ord of capital
 print([ord(c) for c in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"])
+
+# str to int cast
+print(int("001"))
