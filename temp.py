@@ -85,3 +85,10 @@ print([ord(c) for c in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"])
 
 # str to int cast
 print(int("001"))
+
+# locate the insertion point for `num` in `arr`
+from bisect import bisect_left
+arr = [1,2,3,5,8,9,12]
+print(bisect_left(arr, 4))  # 3
+print(bisect_left(arr, 13))  # 7
+
