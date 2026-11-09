@@ -92,3 +92,9 @@ arr = [1,2,3,5,8,9,12]
 print(bisect_left(arr, 4))  # 3
 print(bisect_left(arr, 13))  # 7
 
+# native matrices
+grid = [[2,0],[1,1]]
+print(grid[0][:])  # [2, 0]
+print(grid[:][0])  # [2, 0] != [2, 1], ofc it doesn't work
+col = zip(*grid)
+print([e for e in col])  # [(2, 1), (0, 1)]
