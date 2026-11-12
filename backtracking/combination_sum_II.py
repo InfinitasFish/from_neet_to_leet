@@ -9,24 +9,26 @@ class Solution:
 
         res = []
         def dfs(idx, set, sum):
+            if sum == target:
+                res.append(set)
+                return
             if idx >= len(candidates) or sum > target:
                 return
-            if sum == target:
-                res.append(set.copy())
-                return
 
-            set.append(candidates[idx])
-            dfs(idx + 1, set, sum + candidates[idx])
+            cand = candidates[idx]
+            step = 1
+            dfs(idx + step, set + [cand], sum + cand)
 
-            set.pop()
-            while idx < len(candidates) - 1 and candidates[idx] == candidates[idx + 1]:
-                idx += 1
-            dfs(idx + 1, set, sum)
+            # we take first unique element, search for combinations, only then skip duplicates
+            while idx < len(candidates) - step and candidates[idx + step] == cand:
+                step += 1
+            dfs(idx + step, set, sum)
 
         dfs(0, [], 0)
         return res
 
 
 s = Solution()
+print(s.combinationSum2([3,3,3], 9))  # [3,3,3]
 print(s.combinationSum2([9,2,2,4,6,1,5], 8))  # [[1,2,5],[2,2,4],[2,6]]
 print(s.combinationSum2([1,2,3,4,5], 7))  # [[1,2,4],[2,5],[3,4]]
