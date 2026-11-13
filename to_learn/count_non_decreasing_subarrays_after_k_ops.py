@@ -22,7 +22,6 @@ class Solution:
         return ans
 
 
-
 s = Solution()
 #print(s.countNonDecreasingSubarrays([6,3,1,2,4,4], 7))  # 17
 #print(s.countNonDecreasingSubarrays([6,3,1,3,6], 4))  # 12
