@@ -98,3 +98,10 @@ print(grid[0][:])  # [2, 0]
 print(grid[:][0])  # [2, 0] != [2, 1], ofc it doesn't work
 col = zip(*grid)
 print([e for e in col])  # [(2, 1), (0, 1)]
+
+# reversed range borders
+print([i for i in reversed(range(5))])  # [4, 3, 2, 1, 0]
+
+# single length `:`
+print([1,2,3][1:1])  # []
+print([1,2,3][1:2])  # [2]
