@@ -105,3 +105,7 @@ print([i for i in reversed(range(5))])  # [4, 3, 2, 1, 0]
 # single length `:`
 print([1,2,3][1:1])  # []
 print([1,2,3][1:2])  # [2]
+
+# native permutations sort
+perms = [[3,1,2], [2,1,3], [1,2,3], [2,3,1]]
+print(sorted(perms))  # [[1, 2, 3], [2, 1, 3], [2, 3, 1], [3, 1, 2]]
