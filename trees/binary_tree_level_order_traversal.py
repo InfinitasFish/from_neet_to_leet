@@ -43,7 +43,9 @@ class Solution_:
         # to make this possible, we have to use queue
         res = []
         queue = deque()
-        queue.append(root)
+
+        if root is not None:
+            queue.append(root)
 
         while queue:
             level = []
